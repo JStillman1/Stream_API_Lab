@@ -5,6 +5,10 @@ import org.example.streamapi.model.Friend;
 import org.example.streamapi.model.User;
 
 import java.util.List;
+import java.util.stream.IntStream;
+
+import static java.lang.Math.max;
+import static java.lang.Math.min;
 
 public class Extension {
     /*
@@ -14,7 +18,7 @@ public class Extension {
     */
     public int [] streamNumbers(int a, int b) {
         // Implement me :)
-        return null;
+        return IntStream.range(min(a,b), max(a,b)).toArray();
     }
 
     /*
