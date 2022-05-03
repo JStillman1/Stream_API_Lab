@@ -33,7 +33,7 @@ public class Extension {
         if(filteredList.isEmpty()){
             return new User(userId, "New user", User.GENDER.UNKNOWN);
         }
-        return filteredList.get(0);
+        return filteredList.get(0);C
     }
 
     /*
