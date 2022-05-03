@@ -1,5 +1,7 @@
 package org.example.streamapi;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class MVP {
@@ -26,7 +28,8 @@ public class MVP {
     */
     public int[] doubleInts(int[] numbers) {
         // Implement me :)
-        return null;
+        return Arrays.stream(numbers).map(num -> num * 2).toArray();
+
     }
 
     /*
