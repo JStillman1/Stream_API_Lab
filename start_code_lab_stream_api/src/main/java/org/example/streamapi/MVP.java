@@ -18,9 +18,7 @@ public class MVP {
      */
     public List<Integer> returnEvenNumbers(List<Integer> numbers) {
         // Implement me :)
-        return numbers.stream()
-                      .filter(p -> p%2 == 0)
-                      .toList();
+        return numbers.stream().filter(p -> p%2 == 0).toList();
     }
 
     /*
