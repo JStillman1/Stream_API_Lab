@@ -5,6 +5,7 @@ import org.example.streamapi.model.Friend;
 import org.example.streamapi.model.User;
 
 import java.util.List;
+import java.util.function.Predicate;
 import java.util.stream.IntStream;
 
 import static java.lang.Math.max;
@@ -33,7 +34,7 @@ public class Extension {
         if(filteredList.isEmpty()){
             return new User(userId, "New user", User.GENDER.UNKNOWN);
         }
-        return filteredList.get(0);C
+        return filteredList.get(0);
     }
 
     /*
@@ -44,8 +45,15 @@ public class Extension {
     */
 
     public List<String> partyWithFriends(List<Friend> friends) {
+        Predicate<Friend> availableOnSaturday = friend -> friend.getAvailableDay().equals("Saturday");
+        Predicate<Friend> wantsToParty = friend -> friend.getActivity().equals("Party");
+
         // Implement me :)
-        return null;
+        return friends.stream()
+                .filter(availableOnSaturday.and(wantsToParty))
+                .map(friend -> friend.getName())
+                .toList();
+
     }
 
     /*
