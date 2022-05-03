@@ -39,7 +39,7 @@ public class MVP {
     public List<String> splitToAllCapsList(String input) {
         // Implement me :)
         List<String> split = List.of(input.split(""));
-        return split.stream().map(name -> name.toUpperCase()).toList();
+        return split.stream().map(String::toUpperCase).toList();
     }
 
     /*
