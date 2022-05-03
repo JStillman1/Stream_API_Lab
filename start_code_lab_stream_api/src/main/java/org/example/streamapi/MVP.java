@@ -3,6 +3,7 @@ package org.example.streamapi;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Locale;
 
 public class MVP {
 
@@ -37,7 +38,8 @@ public class MVP {
      */
     public List<String> splitToAllCapsList(String input) {
         // Implement me :)
-        return null;
+        List<String> split = List.of(input.split(""));
+        return split.stream().map(name -> name.toUpperCase()).toList();
     }
 
     /*
