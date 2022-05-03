@@ -10,7 +10,7 @@ public class MVP {
 
     public void printNames(List<String> names) {
         // Implement me :)
-        names.stream().forEach(p -> System.out.println(p));
+        names.forEach(System.out::println);
     }
 
     /*
