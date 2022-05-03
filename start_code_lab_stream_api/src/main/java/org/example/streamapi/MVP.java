@@ -49,7 +49,12 @@ public class MVP {
     */
     public List<String> filterByFirstLetterAndOrder(List<String> list, String letter) {
         // Implement me :)
-        return null;
+        return list.stream()
+                .filter(animal -> animal.startsWith(letter))
+                .map(String::toUpperCase)
+                .sorted()
+                .toList();
+
     }
 
     /*

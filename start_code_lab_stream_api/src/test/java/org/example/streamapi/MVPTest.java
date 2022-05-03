@@ -201,7 +201,7 @@ class MVPTest {
         }
 
         @Test
-        @DisplayName("should return [] for G [\"penguin\", \"cat\", \"monkey\", \"parrot\", \"lion\", \"panda\"]")
+        @DisplayName("should return [] for g [\"penguin\", \"cat\", \"monkey\", \"parrot\", \"lion\", \"panda\"]")
         void filterFirstLetter_g() {
 
             List<String> input = List.of("penguin", "cat", "monkey", "parrot", "lion", "panda");
