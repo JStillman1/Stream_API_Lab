@@ -29,7 +29,11 @@ public class Extension {
     */
     public User getUserByIdOrCreateNew(List<User> users, long userId) {
         // Implement me :)
-        return null;
+        List<User> filteredList = users.stream().filter(user -> user.getId() == userId).toList();
+        if(filteredList.isEmpty()){
+            return new User(userId, "New user", User.GENDER.UNKNOWN);
+        }
+        return filteredList.get(0);
     }
 
     /*
