@@ -4,7 +4,9 @@ import org.example.streamapi.model.Bodybuilder;
 import org.example.streamapi.model.Friend;
 import org.example.streamapi.model.User;
 
+import java.util.Comparator;
 import java.util.List;
+import java.util.Optional;
 import java.util.function.Predicate;
 import java.util.stream.IntStream;
 
@@ -31,6 +33,7 @@ public class Extension {
     public User getUserByIdOrCreateNew(List<User> users, long userId) {
         // Implement me :)
         List<User> filteredList = users.stream().filter(user -> user.getId() == userId).toList();
+
         if(filteredList.isEmpty()){
             return new User(userId, "New user", User.GENDER.UNKNOWN);
         }
@@ -68,7 +71,20 @@ public class Extension {
      */
     public List<String> sortBodybuilders(List<Bodybuilder> bodybuilders) {
         // Implement me :)
-        return null;
+        Comparator<Bodybuilder> byLift = Comparator
+                .comparing(Bodybuilder::getLift, (s1, s2) -> s2.compareTo(s1));
+        Comparator<Bodybuilder> byAge = Comparator
+                .comparing(Bodybuilder::getAge);
+        Comparator<Bodybuilder> byName = Comparator
+                .comparing(Bodybuilder::getName);
+
+
+        return bodybuilders.stream()
+                .sorted(byName)
+                .sorted(byAge)
+                .sorted(byLift)
+                .map(Bodybuilder::getName)
+                .toList();
     }
 
 }
